@@ -33,6 +33,7 @@ func main() {
 		port = "8080"
 	}
 	r := gin.Default()
+	gin.SetMode(gin.ReleaseMode)
 	r.Use(cors.Default())
 	r.GET("/api", returnWorkdays)
 	r.Run(":"+port)
